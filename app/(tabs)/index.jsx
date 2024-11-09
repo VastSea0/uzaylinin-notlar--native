@@ -66,11 +66,11 @@ export default function MainPage() {
   }
 
   return (
-    <View style={styles.container}>
+  <>
       {selectedPost ? (
         <PostDetail post={selectedPost} onBack={() => setSelectedPost(null)} />
       ) : (
-        <>
+        <View style={styles.container}>
         <View style={{
           flexDirection: 'row',
           justifyContent: 'center',
@@ -78,6 +78,7 @@ export default function MainPage() {
           
           
         }}>
+      
           <Text style={styles.header}>Blog Yazıları</Text>
           <Pressable onPress={refetch}>
             
@@ -104,9 +105,10 @@ export default function MainPage() {
             maxToRenderPerBatch={5}
             windowSize={5}
           />
-        </>
+      </View>
       )}
-    </View>
+ 
+    </>
   );
 }
 

@@ -10,13 +10,17 @@ import { formatDate, formatTime } from './dates';
  
 
 
+const markdownStyles = {
+  text: {
+    color: '#fff', 
+  }
+};
 
 export const PostDetail = ({ post, onBack }) => (
- 
   <ScrollView style={styles.blogContainer}>
     <Text style={styles.detailTitle}>{post.title}</Text>
     <View style={styles.blogContent}>
-      <Markdown style={styles.blogContent}>{post.content}</Markdown>
+      <Markdown style={markdownStyles}>{post.content}</Markdown>
     </View>
     <Text style={styles.excerpt}>{post.excerpt}</Text>
     <View style={styles.dateContainer}>
